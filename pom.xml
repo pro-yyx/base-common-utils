@@ -20,6 +20,7 @@
         <joda-time.version>2.10.1</joda-time.version>
         <fastjson.version>1.2.54</fastjson.version>
         <slf4j.version>1.7.25</slf4j.version>
+        <pagehelper-springboot.version>1.2.10</pagehelper-springboot.version>
     </properties>
 
     <build>
@@ -41,6 +42,11 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.github.pagehelper</groupId>
+            <artifactId>pagehelper-spring-boot-starter</artifactId>
+            <version>${pagehelper-springboot.version}</version>
         </dependency>
 
         <dependency>
