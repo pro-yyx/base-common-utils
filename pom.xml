@@ -15,12 +15,15 @@
     </parent>
 
     <properties>
+        <mvn-compiler-plugin.version>3.8.0</mvn-compiler-plugin.version>
+        <mvn-compiler-jdk.version>1.8</mvn-compiler-jdk.version>
+        <lombok.version>1.18.8</lombok.version>
         <commons-lang3.version>3.8.1</commons-lang3.version>
         <commons-lang.version>2.6</commons-lang.version>
         <joda-time.version>2.10.1</joda-time.version>
         <fastjson.version>1.2.54</fastjson.version>
         <slf4j.version>1.7.25</slf4j.version>
-        <pagehelper-springboot.version>1.2.10</pagehelper-springboot.version>
+        <guava.version>27.1-jre</guava.version>
     </properties>
 
     <build>
@@ -28,25 +31,34 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.8.0</version>
+                <version>${mvn-compiler-plugin.version}</version>
                 <configuration>
-                    <source>1.8</source>
-                    <target>1.8</target>
+                    <source>${mvn-compiler-jdk.version}</source>
+                    <target>${mvn-compiler-jdk.version}</target>
                 </configuration>
             </plugin>
         </plugins>
     </build>
 
+    <!--使用nexus私服 -->
+    <distributionManagement>
+        <repository>
+            <!-- id 名字可以随意取，但是要与setting文件中的<server>属性的id一致-->
+            <id>releases</id>
+            <url>http://10.122.60.173:9091/repository/study-releases</url>
+        </repository>
+        <snapshotRepository>
+            <id>snapshots</id>
+            <url>http://10.122.60.173:9091/repository/study-snapshots</url>
+        </snapshotRepository>
+    </distributionManagement>
+
     <dependencies>
         <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-test</artifactId>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>com.github.pagehelper</groupId>
-            <artifactId>pagehelper-spring-boot-starter</artifactId>
-            <version>${pagehelper-springboot.version}</version>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>${lombok.version}</version>
+            <scope>provided</scope>
         </dependency>
 
         <dependency>
@@ -75,7 +87,13 @@
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-api</artifactId>
-            <version>1.7.25</version>
+            <version>${slf4j.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>${guava.version}</version>
         </dependency>
     </dependencies>
 </project>
