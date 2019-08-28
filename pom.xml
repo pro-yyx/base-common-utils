@@ -15,6 +15,8 @@
     </parent>
 
     <properties>
+        <junit.version>4.12</junit.version>
+        <mockito-core.version>2.23.4</mockito-core.version>
         <mvn-compiler-plugin.version>3.8.0</mvn-compiler-plugin.version>
         <mvn-compiler-jdk.version>1.8</mvn-compiler-jdk.version>
         <lombok.version>1.18.8</lombok.version>
@@ -24,6 +26,7 @@
         <fastjson.version>1.2.54</fastjson.version>
         <slf4j.version>1.7.25</slf4j.version>
         <guava.version>27.1-jre</guava.version>
+        <github-pagehelper.version>5.1.10</github-pagehelper.version>
     </properties>
 
     <build>
@@ -45,15 +48,28 @@
         <repository>
             <!-- id 名字可以随意取，但是要与setting文件中的<server>属性的id一致-->
             <id>releases</id>
-            <url>http://10.122.60.173:9091/repository/study-releases</url>
+            <url>http://192.168.89.6:9001/repository/study-release/</url>
         </repository>
         <snapshotRepository>
             <id>snapshots</id>
-            <url>http://10.122.60.173:9091/repository/study-snapshots</url>
+            <url>http://192.168.89.6:9001/repository/study-snapshot/</url>
         </snapshotRepository>
     </distributionManagement>
 
     <dependencies>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>${junit.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-core</artifactId>
+            <version>${mockito-core.version}</version>
+            <scope>test</scope>
+        </dependency>
+
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
@@ -94,6 +110,12 @@
             <groupId>com.google.guava</groupId>
             <artifactId>guava</artifactId>
             <version>${guava.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.github.pagehelper</groupId>
+            <artifactId>pagehelper</artifactId>
+            <version>${github-pagehelper.version}</version>
         </dependency>
     </dependencies>
 </project>

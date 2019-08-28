@@ -180,7 +180,7 @@ under the License.
       <mirrorOf>*</mirrorOf>
       <name>internal nexus repository</name>
 	  <!--镜像采用配置好的组的地址-->
-      <url>http://10.122.60.173:9091/repository/study</url>
+      <url>http://10.122.60.173:9001/repository/study</url>
     </mirror>
 	 
   </mirrors>
@@ -292,7 +292,7 @@ under the License.
 			<repository>
 			  <id>nexus-yyx</id>
 			  <name>nexus-central</name>
-			  <url>http://10.122.60.173:9091/repository/study</url>
+			  <url>http://10.122.60.173:9001/repository/study</url>
 			  <layout>default</layout>
 			  <!--可以从该镜像拉取snapshots构建 -->
 			  <snapshots>
@@ -309,7 +309,7 @@ under the License.
 			<pluginRepository>
 			  <id>nexus-yyx</id>
 			  <name>nexus-central</name>
-			  <url>http://10.122.60.173:9091/repository/study</url>
+			  <url>http://10.122.60.173:9001/repository/study</url>
 			  <layout>default</layout>
 			  <!--可以从该镜像拉取snapshots构建 -->
 			  <snapshots>
@@ -334,6 +334,6 @@ under the License.
    <!-- 需要激活<profiles> 中的id 才能生效 -->
     <activeProfiles>
     <activeProfile>nexus-yyx-repositories</activeProfile>
-    <activeProfile>dk-1.8</activeProfile>
+    <activeProfile>jdk-1.8</activeProfile>
   </activeProfiles>
 </settings>
