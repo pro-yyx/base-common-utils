@@ -15,7 +15,7 @@
     </parent>
 
     <properties>
-        <junit.version>4.12</junit.version>
+        <junit.version>4.13.1</junit.version>
         <mockito-core.version>2.23.4</mockito-core.version>
         <mvn-compiler-plugin.version>3.8.0</mvn-compiler-plugin.version>
         <mvn-compiler-jdk.version>1.8</mvn-compiler-jdk.version>
